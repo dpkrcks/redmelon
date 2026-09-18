@@ -71,6 +71,41 @@ export default async function ServiceDetailPage({ params }: Props) {
                   </AnimateIn>
                 ))}
               </ul>
+
+              <AnimateIn delay={0.12}>
+                <h3 className="mt-12 font-[family-name:var(--font-display)] text-xl font-semibold">
+                  AI, ML & technology
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--ink-muted)] md:text-base">
+                  Engagements on this service draw from our full delivery stack — including
+                  AI/ML document intelligence, React/TypeScript, Java/Spring Boot, Python/Odoo,
+                  Android field apps, PostgreSQL, and cloud security tooling.
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {[
+                    "OCR / ICR",
+                    "React + TypeScript",
+                    "Java + Spring Boot",
+                    "Python / Odoo",
+                    "Kotlin Android",
+                    "PostgreSQL",
+                    "AWS KMS / Vault",
+                  ].map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-lg border border-[var(--border)] bg-[var(--mist)] px-3 py-1.5 text-xs font-medium text-[var(--ink-muted)]"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                  <Link
+                    href="/services#technology"
+                    className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent-soft)] px-3 py-1.5 text-xs font-medium text-[var(--accent)] transition-colors hover:bg-[var(--accent)] hover:text-white"
+                  >
+                    View all stacks →
+                  </Link>
+                </div>
+              </AnimateIn>
             </div>
 
             <aside>

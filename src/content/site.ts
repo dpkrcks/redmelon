@@ -1,33 +1,23 @@
 export const site = {
-  name: "Redmelon",
+  name: "Red Melon",
   legalName: "Redmelon Business Solutions Private Limited",
   tagline: "Fintech & e-governance systems for banks, government, and enterprises",
   description:
     "Redmelon designs and delivers production systems for banking and government — payments, collections, bank guarantees, API rails, security assessments, and statutory land acquisition platforms — backed by 20+ years in the financial services ecosystem.",
   hero: {
-    brand: "Redmelon",
-    badge: {
-      label: "See Bhuarjan & Cradexia in production",
-      href: "/work",
-    },
-    headlineBefore: "Your domain systems",
-    headlineAccent: "engine.",
+    brand: "Red Melon",
+    eyebrow: "Fintech · E-governance · Technology",
+    headline: "Building Digital Solutions That Power Finance & Governance",
     support:
-      "Flexible enough for bank ops desks. Rigorous enough for statutory government workflows — payments, collections, bank guarantees, API rails, and land acquisition on one delivery muscle.",
-    primaryCta: { label: "Start a conversation", href: "/contact" },
-    secondaryCta: { label: "Explore services", href: "/services" },
+      "Payments, collections, bank guarantees, API rails, and statutory land workflows — built for the desks that own them, delivered from India and Australia.",
+    primaryCta: { label: "Book a consultation", href: "/contact" },
+    secondaryCta: { label: "View capabilities", href: "/services" },
+    location: "New Delhi · New South Wales",
     proof: [
-      { value: "20+", label: "Years in BFSI & gov" },
-      { value: "120+", label: "Land projects live" },
-      { value: "2", label: "Regions shipping" },
+      { value: "20+", label: "Years BFSI & government" },
+      { value: "2", label: "Delivery hubs" },
+      { value: "3", label: "Core practices" },
     ],
-    modules: [
-      { title: "Collections", detail: "PG · RTGS · NEFT", status: "Live" },
-      { title: "Bank guarantees", detail: "Lifecycle + ERP hooks", status: "Live" },
-      { title: "Bhuarjan", detail: "Form-10 → Sec 19 award", status: "120+ projects" },
-      { title: "API rails", detail: "Multi-vendor routing", status: "Ready" },
-    ],
-    chips: ["Fintech", "E-governance", "Security", "Trade ops"],
   },
   domains: [
     {
@@ -101,7 +91,7 @@ export const site = {
         "Configurable platforms for client mandates",
         "Embedded or fixed-scope delivery",
       ],
-      href: "/partners",
+      href: "/services",
       tone: "mint" as const,
     },
   ],
@@ -150,8 +140,6 @@ export const site = {
     { label: "Services", href: "/services" },
     { label: "Work", href: "/work" },
     { label: "Clients", href: "/clients" },
-    { label: "Partners", href: "/partners" },
-    { label: "Culture", href: "/culture" },
     { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
   ],

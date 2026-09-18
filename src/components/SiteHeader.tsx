@@ -8,21 +8,19 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 import { site } from "@/content/site";
 import { BrandLogo } from "@/components/BrandLogo";
 import { Button } from "@/components/Button";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import { useTheme } from "@/components/ThemeProvider";
 import { cn, easeOutExpo } from "@/lib/utils";
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const { theme } = useTheme();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const reduce = useReducedMotion();
-  const darkHero = pathname === "/" && !scrolled && !open;
-  const invertLogo = darkHero || theme === "dark";
+  /** Transparent over home hero at top; solid dark on every other state/page */
+  const overHomeHero = pathname === "/" && !scrolled && !open;
+  const lightText = true;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -39,81 +37,63 @@ export function SiteHeader() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
-        scrolled
-          ? "border-[var(--border)] bg-[var(--surface)]/90 shadow-[0_10px_40px_-28px_rgba(10,10,18,0.35)] backdrop-blur-xl"
-          : darkHero
-            ? "border-transparent bg-transparent"
-            : "border-transparent bg-[var(--surface)]/80 backdrop-blur-md",
+        overHomeHero
+          ? "border-transparent bg-transparent"
+          : "border-white/10 bg-[#050b18]/95 shadow-[0_12px_40px_-20px_rgba(0,0,0,0.65)] backdrop-blur-xl",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 md:h-20 md:px-8">
-        <BrandLogo
-          size="sm"
-          priority
-          className={cn(
-            "shrink-0",
-            invertLogo && "[&_img]:brightness-0 [&_img]:invert",
-          )}
-        />
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 md:h-[5.25rem] md:px-8">
+        <BrandLogo size="sm" onDark={lightText} className="shrink-0" />
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
-          {site.nav.map((item) => {
+        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
+          {site.nav.map((item, i) => {
             const active =
               item.href === "/"
                 ? pathname === "/"
                 : pathname.startsWith(item.href);
             return (
-              <Link
+              <motion.div
                 key={item.href}
-                href={item.href}
-                className={cn(
-                  "relative px-3 py-2 text-sm transition-colors duration-300",
-                  darkHero
-                    ? active
-                      ? "text-white"
-                      : "text-white/60 hover:text-white"
-                    : active
-                      ? "text-[var(--ink)]"
-                      : "text-[var(--ink-muted)] hover:text-[var(--ink)]",
-                )}
+                initial={reduce ? false : { opacity: 0, y: -6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.04 * i, ease: easeOutExpo }}
               >
-                {item.label}
-                <span
+                <Link
+                  href={item.href}
                   className={cn(
-                    "absolute inset-x-3 -bottom-0.5 h-[2px] origin-left bg-[var(--accent)] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
-                    active ? "scale-x-100" : "scale-x-0",
+                    "relative px-3.5 py-2 text-[0.95rem] font-medium tracking-[-0.01em] transition-colors duration-300 md:px-4 md:text-base",
+                    active ? "text-white" : "text-white/80 hover:text-white",
                   )}
-                />
-              </Link>
+                >
+                  {item.label}
+                  <span
+                    className={cn(
+                      "absolute inset-x-3.5 -bottom-0.5 h-[2px] origin-left bg-[var(--accent)] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:inset-x-4",
+                      active ? "scale-x-100" : "scale-x-0",
+                    )}
+                  />
+                </Link>
+              </motion.div>
             );
           })}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <ThemeToggle lightOnDark={darkHero} />
-          <Button href="/contact" variant="primary" className="!py-2.5 !px-5">
+          <Button href="/contact" variant="primary" className="!px-5 !py-2.5 !text-[0.95rem]">
             Get in touch
             <ArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Button>
         </div>
 
-        <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle lightOnDark={darkHero} />
-          <button
-            type="button"
-            className={cn(
-              "inline-flex h-11 w-11 items-center justify-center rounded-full border",
-              darkHero
-                ? "border-white/20 bg-white/10 text-white"
-                : "border-[var(--border)] bg-[var(--surface)] text-[var(--ink)]",
-            )}
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
-        </div>
+        <button
+          type="button"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white lg:hidden"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
       </div>
 
       <AnimatePresence>
@@ -126,7 +106,7 @@ export function SiteHeader() {
             onClick={() => setOpen(false)}
           >
             <motion.nav
-              className="absolute inset-x-0 top-0 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-[var(--ink)]/8 bg-[var(--paper)] px-5 py-8 shadow-2xl"
+              className="absolute inset-x-0 top-0 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-white/10 bg-[#050b18] px-5 py-8 shadow-2xl"
               initial={reduce ? false : { y: -24, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -16, opacity: 0 }}
@@ -145,7 +125,7 @@ export function SiteHeader() {
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="block rounded-2xl px-4 py-3.5 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)] transition-colors hover:bg-[var(--mist)]"
+                      className="block rounded-2xl px-4 py-3.5 font-[family-name:var(--font-display)] text-2xl text-white transition-colors hover:bg-white/8"
                     >
                       {item.label}
                     </Link>

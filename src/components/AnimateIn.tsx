@@ -17,7 +17,7 @@ export function AnimateIn({
   children,
   className,
   delay = 0,
-  y = 28,
+  y = 48,
   x = 0,
   once = true,
 }: AnimateInProps) {
@@ -32,8 +32,8 @@ export function AnimateIn({
       className={cn(className)}
       initial={{ opacity: 0, y, x }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
-      viewport={{ once, margin: "-8% 0px" }}
-      transition={{ duration: 0.75, delay, ease: easeOutExpo }}
+      viewport={{ once, margin: "-5% 0px", amount: 0.2 }}
+      transition={{ duration: 0.85, delay, ease: easeOutExpo }}
     >
       {children}
     </motion.div>

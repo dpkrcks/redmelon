@@ -75,7 +75,7 @@ export default function ClientsPage() {
                     alt={client.name}
                     width={160}
                     height={56}
-                    className="h-10 w-auto max-w-full object-contain dark:brightness-0 dark:invert"
+                    className="h-10 w-auto max-w-full object-contain"
                   />
                   <span className="text-center text-[11px] font-medium text-[var(--ink-muted)]">
                     {client.name}

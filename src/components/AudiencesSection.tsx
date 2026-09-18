@@ -17,22 +17,22 @@ import { cn } from "@/lib/utils";
 
 const tones = {
   lavender: {
-    card: "bg-[#ece6f7] dark:bg-[#221f2e]",
-    accent: "text-[#6d5a9c] dark:text-[#c4b5e8]",
-    chip: "bg-white/80 text-[#6d5a9c] dark:bg-white/10 dark:text-[#c4b5e8]",
-    glow: "from-[#d4c8f0]/80 to-transparent dark:from-[#6d5a9c]/25",
+    card: "bg-[#edf2fc]",
+    accent: "text-[#1242c4]",
+    chip: "bg-white/80 text-[#1242c4]",
+    glow: "from-[#b8c9f5]/80 to-transparent",
   },
   sky: {
-    card: "bg-[#e4f1fb] dark:bg-[#1a2430]",
-    accent: "text-[#3d6f94] dark:text-[#9ec4e0]",
-    chip: "bg-white/80 text-[#3d6f94] dark:bg-white/10 dark:text-[#9ec4e0]",
-    glow: "from-[#b9d9f2]/80 to-transparent dark:from-[#3d6f94]/25",
+    card: "bg-[#e4f1fb]",
+    accent: "text-[#1b57f0]",
+    chip: "bg-white/80 text-[#1b57f0]",
+    glow: "from-[#7eb0ff]/50 to-transparent",
   },
   mint: {
-    card: "bg-[#e5f4ea] dark:bg-[#1a2820]",
-    accent: "text-[#3d7a55] dark:text-[#9fd4b0]",
-    chip: "bg-white/80 text-[#3d7a55] dark:bg-white/10 dark:text-[#9fd4b0]",
-    glow: "from-[#b8e0c6]/70 to-transparent dark:from-[#3d7a55]/25",
+    card: "bg-[#e8f0ff]",
+    accent: "text-[#354765]",
+    chip: "bg-white/80 text-[#354765]",
+    glow: "from-[#d9e4f8]/80 to-transparent",
   },
 } as const;
 

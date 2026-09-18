@@ -66,7 +66,7 @@ export function CapabilitiesGrid({
                   <Link
                     key={service.slug}
                     href={`/services/${service.slug}`}
-                    className="group flex min-h-[18rem] flex-col bg-[var(--surface)] px-8 py-8 transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[#e8b4b4] dark:hover:bg-[var(--accent-soft)] md:min-h-[20rem] md:px-10 md:py-9 xl:px-12"
+                    className="group flex min-h-[18rem] flex-col bg-[var(--surface)] px-8 py-8 transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[var(--accent-soft)] md:min-h-[20rem] md:px-10 md:py-9 xl:px-12"
                   >
                     <span className="inline-flex h-11 w-11 items-center justify-center text-[var(--accent)] transition-transform duration-500 group-hover:scale-105">
                       <Icon className="h-7 w-7" strokeWidth={1.6} />

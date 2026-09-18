@@ -1,54 +1,60 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { motion, useReducedMotion } from "framer-motion";
+import { cn, easeOutExpo } from "@/lib/utils";
 
 type BrandLogoProps = {
   className?: string;
-  /** Height classes for the logo image */
   size?: "sm" | "md" | "lg";
   href?: string | null;
-  priority?: boolean;
+  /** Light wordmark for dark surfaces */
+  onDark?: boolean;
 };
 
-const sizes = {
-  sm: { className: "h-8 w-auto md:h-9", width: 180, height: 50, sizes: "180px" },
-  md: { className: "h-10 w-auto md:h-11", width: 220, height: 62, sizes: "220px" },
-  lg: { className: "h-12 w-auto md:h-16", width: 320, height: 90, sizes: "320px" },
+const sizeClasses = {
+  sm: "text-[1.45rem] leading-none md:text-[1.65rem]",
+  md: "text-[1.75rem] leading-none md:text-[2rem]",
+  lg: "text-[2.15rem] leading-none md:text-[2.5rem]",
 };
 
 export function BrandLogo({
   className,
   size = "md",
   href = "/",
-  priority = false,
+  onDark = false,
 }: BrandLogoProps) {
-  const s = sizes[size];
-  const image = (
-    <Image
-      src="/img/redmelon.png"
-      alt="Redmelon"
-      width={s.width}
-      height={s.height}
-      priority={priority}
-      className={cn(s.className, "object-contain object-left")}
-      sizes={s.sizes}
-    />
+  const reduce = useReducedMotion();
+
+  const content = (
+    <motion.span
+      className={cn(
+        "inline-flex items-baseline font-[family-name:var(--font-display)] font-semibold tracking-[-0.03em]",
+        sizeClasses[size],
+      )}
+      initial={reduce ? false : { opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: easeOutExpo }}
+      whileHover={reduce ? undefined : { opacity: 0.85 }}
+    >
+      <span className={onDark ? "text-[#7eb0ff]" : "text-[var(--accent)]"}>Red</span>
+      <span className={cn("ml-[0.28em]", onDark ? "text-white" : "text-[var(--ink)]")}>
+        Melon
+      </span>
+    </motion.span>
   );
 
   if (href === null) {
-    return <span className={cn("inline-flex items-center", className)}>{image}</span>;
+    return <span className={cn("inline-flex items-center", className)}>{content}</span>;
   }
 
   return (
     <Link
       href={href}
-      className={cn(
-        "inline-flex items-center transition-opacity duration-300 hover:opacity-90",
-        className,
-      )}
-      aria-label="Redmelon home"
+      className={cn("inline-flex items-center", className)}
+      aria-label="Red Melon home"
     >
-      {image}
+      {content}
     </Link>
   );
 }

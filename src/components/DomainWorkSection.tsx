@@ -193,7 +193,7 @@ function EgovVisual({ image }: { image?: string }) {
       <div className="absolute right-2 top-28 z-10 w-[72%] rotate-[3deg] rounded-2xl border border-[var(--border)] bg-[var(--surface)]/95 p-4 shadow-[0_24px_55px_-22px_rgba(10,10,18,0.45)] backdrop-blur-sm md:right-4 md:p-5">
         <div className="flex items-center justify-between">
           <p className="text-sm font-semibold text-[var(--ink)]">Section 19 Award</p>
-          <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
+          <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-emerald-700">
             Declared
           </span>
         </div>
@@ -253,7 +253,7 @@ function FintechVisual({ image }: { image?: string }) {
           >
             <span className="text-[var(--ink-muted)]">{row.label}</span>
             <span className="font-semibold text-[var(--ink)]">{row.amount}</span>
-            <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
+            <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
               {row.status}
             </span>
           </div>

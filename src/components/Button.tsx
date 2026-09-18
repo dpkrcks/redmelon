@@ -24,7 +24,7 @@ export function Button({
 
   const variants = {
     primary:
-      "rounded-xl bg-[var(--accent)] px-5 py-3 text-white shadow-[0_8px_20px_rgba(196,30,30,0.34)] hover:-translate-y-0.5 hover:bg-[var(--accent-strong)] hover:shadow-[0_14px_34px_rgba(196,30,30,0.28)]",
+      "rounded-xl bg-[var(--accent)] px-5 py-3 text-white shadow-[0_8px_20px_rgba(27,87,240,0.34)] hover:-translate-y-0.5 hover:bg-[var(--accent-strong)] hover:shadow-[0_14px_34px_rgba(27,87,240,0.28)]",
     secondary:
       "rounded-xl border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-[var(--ink)] hover:border-[var(--accent)]/35 hover:shadow-[0_10px_24px_-16px_rgba(10,10,18,0.35)] hover:-translate-y-0.5",
     ghost:

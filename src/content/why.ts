@@ -33,5 +33,5 @@ export const whyItems = [
 export const homeCapabilities = {
   title: "Everything you need to digitize regulated workflows",
   subtitle:
-    "From security assessments to payments rails and statutory land acquisition — one team that understands BFSI and government operations.",
+    "From security assessments to payments rails and statutory land acquisition — delivered with AI/ML where it helps operators, on modern full-stack engineering for BFSI and government.",
 };

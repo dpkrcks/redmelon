@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" role="img" aria-label="red melon">
+  <text
+    x="0"
+    y="28"
+    font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
+    font-size="26"
+    font-weight="700"
+    letter-spacing="-0.04em"
+  >
+    <tspan fill="#1b57f0">red</tspan><tspan fill="#040912"> melon</tspan>
+  </text>
+</svg>

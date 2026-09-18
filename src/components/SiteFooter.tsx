@@ -1,23 +1,38 @@
+"use client";
+
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import { site } from "@/content/site";
 import { BrandLogo } from "@/components/BrandLogo";
+import { easeOutExpo } from "@/lib/utils";
 
 const companyLinks = site.nav.filter((item) =>
-  ["/about", "/culture", "/careers", "/contact"].includes(item.href),
+  ["/about", "/careers", "/contact"].includes(item.href),
 );
 const workLinks = site.nav.filter((item) =>
-  ["/services", "/work", "/clients", "/partners"].includes(item.href),
+  ["/services", "/work", "/clients"].includes(item.href),
 );
 
 export function SiteFooter() {
+  const reduce = useReducedMotion();
+
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[var(--dark)] text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_0%_0%,rgba(196,30,30,0.18),transparent_45%)]" />
+      <motion.div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_0%_0%,rgba(27,87,240,0.18),transparent_45%)]"
+        animate={reduce ? undefined : { opacity: [0.7, 1, 0.7] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
 
       <div className="relative mx-auto max-w-6xl px-5 py-10 md:px-8 md:py-12">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1.2fr] md:gap-8">
-          <div>
-            <BrandLogo size="sm" className="[&_img]:brightness-0 [&_img]:invert" />
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: easeOutExpo }}
+          >
+            <BrandLogo size="sm" onDark />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55">
               Fintech and e-governance systems for banks, government, and enterprises —
               India and Australia.
@@ -33,9 +48,14 @@ export function SiteFooter() {
                 </a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.06, ease: easeOutExpo }}
+          >
             <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/40">
               Company
             </h3>
@@ -51,9 +71,14 @@ export function SiteFooter() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: easeOutExpo }}
+          >
             <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/40">
               Work
             </h3>
@@ -74,9 +99,14 @@ export function SiteFooter() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.14, ease: easeOutExpo }}
+          >
             <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/40">
               Offices
             </h3>
@@ -104,7 +134,7 @@ export function SiteFooter() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
       </div>
 

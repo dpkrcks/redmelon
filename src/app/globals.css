@@ -1,47 +1,25 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
+/* Palette mapped from https://nirasolution.com/ — navy + electric blue */
 :root {
-  --ink: #0a0a12;
-  --ink-muted: #64748b;
-  --paper: #fafafa;
-  --mist: #f1f5f9;
+  --ink: #040912;
+  --ink-muted: #354765;
+  --paper: #f7f9fc;
+  --mist: #edf2fc;
   --surface: #ffffff;
-  --border: #e2e8f0;
-  --accent: #c41e1e;
-  --accent-strong: #9f1813;
-  --accent-soft: #fce8e8;
-  --accent-glow: rgba(196, 30, 30, 0.28);
-  --gold: #d4a017;
-  --dark: #090910;
-  --dark-elevated: #12121c;
+  --border: #d9e4f8;
+  --accent: #1b57f0;
+  --accent-strong: #1242c4;
+  --accent-soft: #d9e4f8;
+  --accent-glow: rgba(27, 87, 240, 0.28);
+  --gold: #7eb0ff;
+  --dark: #050b18;
+  --dark-elevated: #0b1630;
   --background: var(--paper);
   --foreground: var(--ink);
-  --why-card: #ebe6dc;
-  --why-card-hover: #e0c4c0;
+  --why-card: #edf2fc;
+  --why-card-hover: #d9e4f8;
   color-scheme: light;
-}
-
-html.dark {
-  --ink: #f4f4f8;
-  --ink-muted: #9aa3b5;
-  --paper: #090910;
-  --mist: #12121c;
-  --surface: #14141f;
-  --border: #2a2a3a;
-  --accent: #e23a3a;
-  --accent-strong: #ff5c5c;
-  --accent-soft: #3a1515;
-  --accent-glow: rgba(226, 58, 58, 0.35);
-  --gold: #e0b43a;
-  --dark: #050508;
-  --dark-elevated: #10101a;
-  --background: var(--paper);
-  --foreground: var(--ink);
-  --why-card: #1a1a26;
-  --why-card-hover: #2a1a1c;
-  color-scheme: dark;
 }
 
 @theme inline {
@@ -95,20 +73,12 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 1rem;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 12px 32px -20px rgba(15, 23, 42, 0.18);
-}
-
-html.dark .card-surface {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 16px 40px -24px rgba(0, 0, 0, 0.65);
+  box-shadow: 0 1px 2px rgba(4, 9, 18, 0.04), 0 12px 32px -20px rgba(4, 9, 18, 0.16);
 }
 
 .card-surface:hover {
   border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
-  box-shadow: 0 14px 34px hsl(0 70% 40% / 0.12);
-}
-
-html.dark .card-surface:hover {
-  box-shadow: 0 14px 34px rgba(226, 58, 58, 0.18);
+  box-shadow: 0 14px 34px rgba(27, 87, 240, 0.12);
 }
 
 @keyframes rail-left {
@@ -129,14 +99,44 @@ html.dark .card-surface:hover {
   }
 }
 
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .animate-rail-left {
-  animation: rail-left 38s linear infinite;
+  animation: rail-left 28s linear infinite;
   will-change: transform;
 }
 
 .animate-rail-right {
-  animation: rail-right 44s linear infinite;
+  animation: rail-right 34s linear infinite;
   will-change: transform;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4.5s ease-in-out infinite;
+}
+
+.animate-float-y {
+  animation: float-y 3.2s ease-in-out infinite;
 }
 
 .rail-mask {
@@ -156,7 +156,6 @@ html.dark .card-surface:hover {
   );
 }
 
-/* Notched card: cut bottom-right for arrow inset */
 .why-card {
   border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
   clip-path: polygon(

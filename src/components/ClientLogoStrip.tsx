@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { clients } from "@/content/clients";
+import { AnimateIn } from "@/components/AnimateIn";
 import { cn } from "@/lib/utils";
 
 type ClientLogoStripProps = {
@@ -23,14 +24,17 @@ export function ClientLogoStrip({
 
   return (
     <section
+      id="clients-strip"
       className={cn(
         "relative overflow-hidden border-y border-[var(--border)] bg-[var(--mist)] py-14 md:py-16",
         className,
       )}
     >
-      <p className="relative z-10 mx-auto max-w-3xl px-5 text-center text-sm leading-relaxed text-[var(--ink-muted)] md:px-8 md:text-base">
-        {title}
-      </p>
+      <AnimateIn>
+        <p className="relative z-10 mx-auto max-w-3xl px-5 text-center text-sm leading-relaxed text-[var(--ink-muted)] md:px-8 md:text-base">
+          {title}
+        </p>
+      </AnimateIn>
 
       <div className="relative mt-10 w-screen max-w-[100vw] -translate-x-1/2 left-1/2">
         <div className="rail-mask overflow-hidden">
@@ -41,7 +45,7 @@ export function ClientLogoStrip({
             {track.map((client, i) => (
               <div
                 key={`${client.slug}-${i}`}
-                className="flex h-16 w-40 shrink-0 items-center justify-center rounded-xl border border-black/5 bg-white p-3 shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition-opacity md:h-[4.5rem] md:w-48"
+                className="flex h-16 w-40 shrink-0 items-center justify-center rounded-xl border border-black/5 bg-white p-3 shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition-transform duration-500 hover:-translate-y-1 md:h-[4.5rem] md:w-48"
               >
                 <Image
                   src={client.logo}
