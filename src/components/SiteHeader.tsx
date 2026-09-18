@@ -39,7 +39,7 @@ export function SiteHeader() {
         "fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
         overHomeHero
           ? "border-transparent bg-transparent"
-          : "border-white/10 bg-[#050b18]/95 shadow-[0_12px_40px_-20px_rgba(0,0,0,0.65)] backdrop-blur-xl",
+          : "border-white/10 bg-[#120a09]/95 shadow-[0_12px_40px_-20px_rgba(0,0,0,0.65)] backdrop-blur-xl",
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 md:h-[5.25rem] md:px-8">
@@ -106,7 +106,7 @@ export function SiteHeader() {
             onClick={() => setOpen(false)}
           >
             <motion.nav
-              className="absolute inset-x-0 top-0 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-white/10 bg-[#050b18] px-5 py-8 shadow-2xl"
+              className="absolute inset-x-0 top-0 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-white/10 bg-[#120a09] px-5 py-8 shadow-2xl"
               initial={reduce ? false : { y: -24, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -16, opacity: 0 }}

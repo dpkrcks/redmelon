@@ -71,21 +71,11 @@ export function ProjectCard({
                 </div>
               ))}
             </dl>
-            <ul className="mt-5 flex flex-wrap gap-2">
-              {project.features.slice(0, 3).map((feature) => (
-                <li
-                  key={feature}
-                  className="rounded-md border border-white/15 bg-white/5 px-2.5 py-1 text-[11px] leading-snug text-white/70"
-                >
-                  {feature}
-                </li>
-              ))}
-            </ul>
           </>
         ) : null}
 
         <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white">
-          View case study
+          View solution
           <ArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </span>
       </div>

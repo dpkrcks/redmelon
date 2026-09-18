@@ -52,7 +52,7 @@ export function DomainWorkSection() {
           </AnimateIn>
           <AnimateIn delay={0.08}>
             <Button href="/work" variant="underline">
-              All projects
+              All solutions
             </Button>
           </AnimateIn>
         </div>

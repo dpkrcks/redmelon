@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
-/* Palette mapped from https://nirasolution.com/ — navy + electric blue */
+/* Primary: brick red — will iterate reds later */
 :root {
-  --ink: #040912;
-  --ink-muted: #354765;
-  --paper: #f7f9fc;
-  --mist: #edf2fc;
+  --ink: #140a08;
+  --ink-muted: #5c4038;
+  --paper: #faf7f5;
+  --mist: #f3ebe8;
   --surface: #ffffff;
-  --border: #d9e4f8;
-  --accent: #1b57f0;
-  --accent-strong: #1242c4;
-  --accent-soft: #d9e4f8;
-  --accent-glow: rgba(27, 87, 240, 0.28);
-  --gold: #7eb0ff;
-  --dark: #050b18;
-  --dark-elevated: #0b1630;
+  --border: #e8d9d4;
+  --accent: #b23a2e;
+  --accent-strong: #8f2e24;
+  --accent-soft: #f5e4e1;
+  --accent-glow: rgba(178, 58, 46, 0.28);
+  --gold: #e08a7a;
+  --dark: #120a09;
+  --dark-elevated: #1c100e;
   --background: var(--paper);
   --foreground: var(--ink);
-  --why-card: #edf2fc;
-  --why-card-hover: #d9e4f8;
+  --why-card: #f3ebe8;
+  --why-card-hover: #e8d9d4;
   color-scheme: light;
 }
 
@@ -78,7 +78,7 @@ body {
 
 .card-surface:hover {
   border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
-  box-shadow: 0 14px 34px rgba(27, 87, 240, 0.12);
+  box-shadow: 0 14px 34px rgba(178, 58, 46, 0.12);
 }
 
 @keyframes rail-left {

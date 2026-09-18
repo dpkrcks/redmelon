@@ -17,22 +17,22 @@ import { cn } from "@/lib/utils";
 
 const tones = {
   lavender: {
-    card: "bg-[#edf2fc]",
-    accent: "text-[#1242c4]",
-    chip: "bg-white/80 text-[#1242c4]",
-    glow: "from-[#b8c9f5]/80 to-transparent",
+    card: "bg-[#f5e4e1]",
+    accent: "text-[#8f2e24]",
+    chip: "bg-white/80 text-[#8f2e24]",
+    glow: "from-[#e08a7a]/70 to-transparent",
   },
   sky: {
-    card: "bg-[#e4f1fb]",
-    accent: "text-[#1b57f0]",
-    chip: "bg-white/80 text-[#1b57f0]",
-    glow: "from-[#7eb0ff]/50 to-transparent",
+    card: "bg-[#f3ebe8]",
+    accent: "text-[#b23a2e]",
+    chip: "bg-white/80 text-[#b23a2e]",
+    glow: "from-[#e08a7a]/50 to-transparent",
   },
   mint: {
-    card: "bg-[#e8f0ff]",
-    accent: "text-[#354765]",
-    chip: "bg-white/80 text-[#354765]",
-    glow: "from-[#d9e4f8]/80 to-transparent",
+    card: "bg-[#efe6e2]",
+    accent: "text-[#5c4038]",
+    chip: "bg-white/80 text-[#5c4038]",
+    glow: "from-[#e8d9d4]/80 to-transparent",
   },
 } as const;
 

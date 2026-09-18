@@ -138,7 +138,7 @@ export const site = {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
-    { label: "Work", href: "/work" },
+    { label: "Solution", href: "/work" },
     { label: "Clients", href: "/clients" },
     { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },

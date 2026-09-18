@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" role="img" aria-label="red melon">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" role="img" aria-label="Red Melon">
   <text
     x="0"
     y="28"
@@ -7,6 +7,6 @@
     font-weight="700"
     letter-spacing="-0.04em"
   >
-    <tspan fill="#1b57f0">red</tspan><tspan fill="#040912"> melon</tspan>
+    <tspan fill="#b23a2e">Red</tspan><tspan fill="#140a08"> Melon</tspan>
   </text>
 </svg>

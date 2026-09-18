@@ -6,32 +6,31 @@ import { CtaBand } from "@/components/CtaBand";
 import { projects } from "@/content/projects";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Solutions",
   description:
-    "Case studies from Redmelon — Bhuarjan land acquisition platform and Cradexia TradeOS for Indian exporters.",
+    "Red Melon solutions — Bhuarjan, Cradexia, BharatNyay, and BharatDDN for fintech and e-governance programmes.",
 };
 
 export default function WorkPage() {
   return (
     <>
       <PageHero
-        eyebrow="Work"
-        title="Case studies from regulated production environments"
-        description="These are not concept decks. Bhuarjan runs statutory land acquisition workflows for government programs. Cradexia is built for exporters, CHAs, and AD banks facing FEMA 23(R)/2026 trade compliance."
+        eyebrow="Solutions"
+        title="Platforms from regulated production environments"
+        description="Bhuarjan and Cradexia run in production for government and trade programmes. BharatNyay and BharatDDN extend the e-governance portfolio — fuller case content coming soon."
         dark
       />
       <section className="bg-[var(--paper)] py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <AnimateIn>
             <p className="max-w-2xl text-base leading-relaxed text-[var(--ink-muted)]">
-              Each case study covers the problem, modules shipped, stack, and measurable
-              operating context. Skim the summaries below, then open a project for the full
-              walkthrough.
+              Skim the summaries below, then open a solution for the overview and operating
+              context.
             </p>
           </AnimateIn>
           <div className="mt-10 grid gap-6 md:grid-cols-2 md:gap-8">
             {projects.map((project, i) => (
-              <AnimateIn key={project.slug} delay={i * 0.08}>
+              <AnimateIn key={project.slug} delay={i * 0.06}>
                 <ProjectCard project={project} featured />
               </AnimateIn>
             ))}

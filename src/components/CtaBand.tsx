@@ -31,11 +31,11 @@ export function CtaBand({
       )}
     >
       <motion.div
-        className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[rgba(27,87,240,0.35)] blur-3xl"
+        className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[rgba(178,58,46,0.35)] blur-3xl"
         animate={reduce ? undefined : { scale: [1, 1.15, 1], opacity: [0.45, 0.7, 0.45] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
       />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_100%_0%,rgba(27,87,240,0.28),transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_100%_0%,rgba(178,58,46,0.28),transparent_50%)]" />
       <div className="relative mx-auto flex max-w-6xl flex-col gap-6 px-5 md:flex-row md:items-center md:justify-between md:gap-10 md:px-8">
         <AnimateIn className="min-w-0 flex-1">
           <h2 className="max-w-xl font-[family-name:var(--font-display)] text-2xl font-semibold tracking-tight md:text-3xl">

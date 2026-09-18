@@ -12,9 +12,9 @@ export type Project = {
   elevator: string;
   longDescription: string;
   stats: ProjectStat[];
-  modules: { name: string; description: string }[];
-  features: string[];
-  stack: string[];
+  modules?: { name: string; description: string }[];
+  features?: string[];
+  stack?: string[];
   image?: string;
   accent: string;
 };
@@ -37,47 +37,6 @@ export const projects: Project[] = [
       { label: "Land parcels", value: "5,000+" },
       { label: "Uptime", value: "99%" },
     ],
-    modules: [
-      {
-        name: "bhuarjan (core)",
-        description:
-          "Odoo 18 workflow engine — surveys, landowners, khasras, statutory notifications, awards, payments, and role-based dashboards.",
-      },
-      {
-        name: "bhuarjan_api",
-        description:
-          "REST API with JWT auth, S3 photo uploads, Form-10 exports, QR microsites, and OpenAPI docs.",
-      },
-      {
-        name: "bhuarjan_app",
-        description:
-          "Native Android field app — geotagged surveys, offline cache, multi-language UI.",
-      },
-      {
-        name: "bhuarjan_security",
-        description:
-          "DPDP-aligned AES-256 PII encryption, consent tracking, and audit logging.",
-      },
-      {
-        name: "Act add-ons",
-        description:
-          "Pluggable Coal and DFCCIL layers that install cleanly without touching the core.",
-      },
-    ],
-    features: [
-      "Statutory workflow engine (not just CRUD)",
-      "Multi-tenant Act layers",
-      "Mobile-first field capture",
-      "Government-grade PII & audit controls",
-    ],
-    stack: [
-      "Odoo 18",
-      "Python",
-      "Kotlin / Jetpack Compose",
-      "JWT / OTP",
-      "S3",
-      "AES-256 / KMS",
-    ],
     image: "/img/land-acquisition.jpg",
     accent: "#8A4531",
   },
@@ -98,49 +57,48 @@ export const projects: Project[] = [
       { label: "Roles served", value: "4" },
       { label: "Status", value: "Active" },
     ],
-    modules: [
-      {
-        name: "Trade Transaction Core",
-        description:
-          "Unified ID spanning goods (Invoice → Shipping Bill → EDPMS → e-BRC) and services (Service Invoice → EDF → EDPMS → e-BRC).",
-      },
-      {
-        name: "Regulatory Control Plane",
-        description:
-          "Versioned, citation-backed rules resolved by transaction event date.",
-      },
-      {
-        name: "Reconciliation Engine",
-        description:
-          "Many-to-many remittance-to-invoice matching with FX tolerance handling.",
-      },
-      {
-        name: "Document Intelligence",
-        description:
-          "Tesseract + PaddleOCR pipeline with confidence scoring and review fallback.",
-      },
-      {
-        name: "Compliance Workflow",
-        description:
-          "Maker-checker cases with SLA escalation and full audit trail.",
-      },
-    ],
-    features: [
-      "Two-rail goods & services core",
-      "Versioned regulatory rules engine",
-      "OCR document intelligence",
-      "AD bank & CHA workspaces",
-    ],
-    stack: [
-      "React 19",
-      "TypeScript",
-      "Java 25",
-      "Spring Boot 4",
-      "PostgreSQL",
-      "Docker",
-    ],
     image: "/img/trade-shipping.jpg",
     accent: "#0E8A7E",
+  },
+  {
+    slug: "bharatnyay",
+    name: "BharatNyay",
+    tagline: "Land-award arbitration and hearings",
+    domain: "egovernance",
+    domainLabel: "E-governance",
+    summary:
+      "A digital toolkit for land-award grievances, SDM hearings, and award computation — content forthcoming.",
+    elevator:
+      "BharatNyay supports grievance intake, hearing schedules, and award workflows for land acquisition programmes. Full case study details will be published here soon.",
+    longDescription:
+      "BharatNyay is an e-governance solution focused on land-award arbitration and related administrative workflows. Detailed modules, outcomes, and programme metrics will be added shortly.",
+    stats: [
+      { label: "Domain", value: "Land awards" },
+      { label: "Focus", value: "Hearings" },
+      { label: "Status", value: "Live" },
+    ],
+    image: "/img/egov-columns.jpg",
+    accent: "#1B4F72",
+  },
+  {
+    slug: "bharatddn",
+    name: "BharatDDN",
+    tagline: "Digital delivery for government programmes",
+    domain: "egovernance",
+    domainLabel: "E-governance",
+    summary:
+      "A Red Melon solution for digital government delivery — content forthcoming.",
+    elevator:
+      "BharatDDN is part of our e-governance portfolio. Full product narrative, capabilities, and results will be published here soon.",
+    longDescription:
+      "BharatDDN extends Red Melon’s government delivery platforms. Detailed overview, operating context, and outcomes will be added when content is ready.",
+    stats: [
+      { label: "Domain", value: "Gov delivery" },
+      { label: "Focus", value: "Digital ops" },
+      { label: "Status", value: "Live" },
+    ],
+    image: "/img/institutional-facade.jpg",
+    accent: "#2C3E50",
   },
 ];
 

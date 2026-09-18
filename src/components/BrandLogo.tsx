@@ -37,7 +37,7 @@ export function BrandLogo({
       transition={{ duration: 0.5, ease: easeOutExpo }}
       whileHover={reduce ? undefined : { opacity: 0.85 }}
     >
-      <span className={onDark ? "text-[#7eb0ff]" : "text-[var(--accent)]"}>Red</span>
+      <span className={onDark ? "text-[#e08a7a]" : "text-[var(--accent)]"}>Red</span>
       <span className={cn("ml-[0.28em]", onDark ? "text-white" : "text-[var(--ink)]")}>
         Melon
       </span>

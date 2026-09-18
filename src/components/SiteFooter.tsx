@@ -19,7 +19,7 @@ export function SiteFooter() {
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[var(--dark)] text-white">
       <motion.div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_0%_0%,rgba(27,87,240,0.18),transparent_45%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_0%_0%,rgba(178,58,46,0.18),transparent_45%)]"
         animate={reduce ? undefined : { opacity: [0.7, 1, 0.7] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -80,7 +80,7 @@ export function SiteFooter() {
             transition={{ duration: 0.6, delay: 0.1, ease: easeOutExpo }}
           >
             <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/40">
-              Work
+              Solutions
             </h3>
             <ul className="mt-3 space-y-2">
               <li>

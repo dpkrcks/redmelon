@@ -38,7 +38,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative isolate min-h-[100svh] overflow-hidden bg-[#050b18] text-white"
+      className="relative isolate min-h-[100svh] overflow-hidden bg-[#120a09] text-white"
     >
       {/* Full-bleed photographic plane */}
       <motion.div
@@ -58,7 +58,7 @@ export function Hero() {
       {/* Atmosphere */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div
-          className="absolute -left-32 top-0 h-[28rem] w-[28rem] rounded-full bg-[#1b57f0]/45 blur-[100px]"
+          className="absolute -left-32 top-0 h-[28rem] w-[28rem] rounded-full bg-[#b23a2e]/45 blur-[100px]"
           animate={
             reduce
               ? undefined
@@ -67,7 +67,7 @@ export function Hero() {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute -right-24 bottom-0 h-[32rem] w-[32rem] rounded-full bg-[#7eb0ff]/30 blur-[110px]"
+          className="absolute -right-24 bottom-0 h-[32rem] w-[32rem] rounded-full bg-[#e08a7a]/30 blur-[110px]"
           animate={
             reduce
               ? undefined
@@ -75,9 +75,9 @@ export function Hero() {
           }
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(5,11,24,0.92)_0%,rgba(5,11,24,0.72)_48%,rgba(5,11,24,0.55)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,24,0.55)_0%,transparent_35%,rgba(5,11,24,0.85)_100%)]" />
-        <div className="absolute inset-0 opacity-[0.14] [background-image:linear-gradient(rgba(158,197,255,0.35)_1px,transparent_1px),linear-gradient(90deg,rgba(158,197,255,0.35)_1px,transparent_1px)] [background-size:64px_64px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(18,10,9,0.92)_0%,rgba(18,10,9,0.72)_48%,rgba(18,10,9,0.55)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,10,9,0.55)_0%,transparent_35%,rgba(18,10,9,0.85)_100%)]" />
+        <div className="absolute inset-0 opacity-[0.14] [background-image:linear-gradient(rgba(224,138,122,0.35)_1px,transparent_1px),linear-gradient(90deg,rgba(224,138,122,0.35)_1px,transparent_1px)] [background-size:64px_64px]" />
       </div>
 
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-10 pt-28 md:justify-center md:px-8 md:pb-16 md:pt-32">
@@ -89,7 +89,7 @@ export function Hero() {
             transition={{ duration: 0.7, ease: easeOutExpo }}
             className="font-[family-name:var(--font-display)] text-4xl font-semibold tracking-[-0.03em] md:text-5xl lg:text-[3.25rem]"
           >
-            <span className="text-[#7eb0ff]">Red</span>
+            <span className="text-[#e08a7a]">Red</span>
             <span className="text-white"> Melon</span>
           </motion.p>
 
@@ -104,7 +104,7 @@ export function Hero() {
             initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.35, ease: easeOutExpo }}
-            className="mt-7 text-xs font-semibold uppercase tracking-[0.28em] text-[#9ec5ff]"
+            className="mt-7 text-xs font-semibold uppercase tracking-[0.28em] text-[#e8a090]"
           >
             {site.hero.eyebrow}
           </motion.p>
@@ -158,7 +158,7 @@ export function Hero() {
               <Button
                 href={site.hero.primaryCta.href}
                 variant="primary"
-                className="!rounded-xl !px-7 !py-3.5 !shadow-[0_12px_40px_rgba(27,87,240,0.5)]"
+                className="!rounded-xl !px-7 !py-3.5 !shadow-[0_12px_40px_rgba(178,58,46,0.5)]"
               >
                 {site.hero.primaryCta.label}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
